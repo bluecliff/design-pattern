@@ -1,2 +1,7 @@
 # design-pattern
-design-pattern study
+
+## visitor patter
+
+visitor patter是一种倾斜扩展性的模式。每一个node有一个accept方法，可以接受任何的vistor，visitor实现visit重载方法，针对不同的node参数返回独特的算法结果，而accept方法将调用传进来的vistor的visit方法，并且把自己作为参数传进去，从而获取结果。该模式实现的效果是对不同的节点接受不同的visitor将返回不同结果，实现了double dispatch,即根据两个不同的对象计算不同的结果。
+
+visitor pattern的缺陷时对node的扩展会很麻烦，增加一个node,每一个visitor都要增加对这个node的支持,而增加visitor相对就比较简单。所以该模式适用于节点比较稳定，即被访问的对象比较稳定的场景中。
